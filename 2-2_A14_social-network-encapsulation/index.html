@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  idth, initial-scale=1.0" />
+  <link rel="stylesheet" href="../00_modules/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+  <title>CCFriends</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <div class="container">
+      <a class="navbar-brand" href="#">Network</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!--         <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Favorite</a>
+          </div> -->
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="font-weight-bold display-2 text-center mt-5" id="title">Friend Lists for C.C.</h1>
+      <p class="lead text-center mb-5" id="sub-title">Welcome to My Social Network!</p>
+      <hr class="my-4 my-5">
+    </div>
+
+    <div class="container" id="filter-panel" style="width:50%">
+      <h1 class="font-weight-lighter text-center">Who are you loooooking for?</h1>
+      <form class="d-flex form-inline justify-content-between">
+        <input type="text" class="form-control mt-2" id="search-input"
+          placeholder="Press enter to search by name or tag (e.g. simth #female)" style="width:70%">
+        <button type="button" class="btn btn-secondary mt-2 ml-2" id="search-button">Filter</button>
+      </form>
+
+      <div class="btn-group mt-2">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Gender
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#" data-dropdown="male">Male</a>
+          <a class="dropdown-item" href="#" data-dropdown="female">Female</a>
+        </div>
+      </div>
+
+      <div class="btn-group mt-2">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Age Period
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#" data-dropdown="range1">
+            <= 30 </a>
+              <a class="dropdown-item" href="#" data-dropdown="range2"> 31 - 40 </a>
+              <a class="dropdown-item" href="#" data-dropdown="range3"> 41 - 50 </a>
+              <a class="dropdown-item" href="#" data-dropdown="range4"> 51 <= </a>
+        </div>
+      </div>
+
+      <div class="btn-group mt-2">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Region
+        </button>
+        <div class="dropdown-menu scrollable-menu" id="dropdown-region">
+          <!-- Render Regions -->
+        </div>
+      </div>
+
+      <!--       <p class="warning-content mt-1">66666</p -->
+
+      <div id="warning-prompt">
+        <!--         <div class="alert alert-danger mt-2" id="success-alert">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>Success! </strong> Product have added to your wishlist.
+          </div> -->
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-start mt-5" id="user-panel">
+      <!-- Render users list -->
+    </div>
+
+    <nav aria-label="..." class="row justify-content-center mt-5">
+      <ul class="pagination pagination-sm" id="paginator">
+        <!-- Render pagination -->
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal-panel">
+    <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">More about me</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-4 left-body-content">
+                  <img src="https://randomuser.me/api/portraits/men/88.jpg">
+                </div>
+                <div class="col-8 right-body-content">
+                  Name: <span id="modalName">Apple</span><br />
+                  Email: <span id="modalMail">apple@gmail.com</span><br />
+                  Gender: <span id="modalGender">female</span><br />
+                  Age: <span id="modalAge">20</span><br />
+                  Region: <span id="modalRegion">CH</span><br />
+                  Birthday: <span id="modalBirth">215613</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer font-small blue mt-4" style="background: #e9ecef">
+    <div class="footer-copyright text-center py-3">Hakuna Matata!</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integr
+    ity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
